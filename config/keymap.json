@@ -10,7 +10,7 @@
   ],
   "layers": [
     [
-         "&none", "&kp N1", "&kp N2", "&kp N3",    "&kp N4",        "&kp SLASH",                   "&tog 0",        "&mo 3",    "&kp BACKSLASH",        "&kp LBKT",  "&kp RBKT", "&kp LEFT_PARENTHESIS", "&kp RIGHT_PARENTHESIS", "&kp MINUS",
+         "&none", "&kp N1", "&kp N2", "&kp N3",    "&kp N4",        "&kp SLASH",                    "&mo 3",        "&mo 3",    "&kp BACKSLASH",        "&kp LBKT",  "&kp RBKT", "&kp LEFT_PARENTHESIS", "&kp RIGHT_PARENTHESIS", "&kp MINUS",
          "&none",  "&kp V",  "&kp W",  "&kp D",     "&kp L",        "&kp MINUS",                   "&tog 1",        "&none",        "&kp EQUAL",           "&kp U",     "&kp O",                "&kp Y",                 "&kp B",     "&none",
        "&kp ESC",  "&kp N",  "&kp S",  "&kp T",     "&kp R",        "&kp COMMA",                   "&tog 2",        "&mo 2",     "&kp LEFT_WIN",                                           "&kp ESCAPE",                 "&mo 2",     "&none",        "&kp PERIOD",  "&kp A",  "&kp E",  "&kp I",  "&kp C", "&kp ENTER",
          "&none",  "&kp P",  "&kp F",  "&kp M",     "&kp H", "&kp SINGLE_QUOTE",                    "&none",        "&none", "&kp LEFT_CONTROL",           "&none",     "&none",              "&kp TAB",                 "&none",     "&none", "&kp DOUBLE_QUOTES",  "&kp K",  "&kp J",  "&kp X",  "&kp G",     "&none",
