@@ -6,8 +6,7 @@
     "base",
     "keypad",
     "fn",
-    "mod",
-    "Layer #4"
+    "mod"
   ],
   "layers": [
     [
@@ -34,12 +33,6 @@
        "&bootloader",        "&none",        "&none",        "&none",        "&none",           "&none",               "&trans", "&trans",                "&none",                                                  "&trans",       "&trans",      "&trans",  "&none",      "&none",  "&none",  "&none",  "&none", "&bootloader",
              "&none",        "&none",        "&none",        "&none",        "&none",           "&none",                "&none",  "&none", "&rgb_ug RGB_MEFS_CMD",        "&none",           "&none", "&rgb_ug RGB_MEFS_CMD",        "&none",       "&none",  "&none",      "&none",  "&none",  "&none",  "&none",       "&none",
         "&bt BT_CLR",        "&none",        "&none",   "&bl BL_INC",   "&bl BL_DEC", "&rgb_ug RGB_TOG",           "&bl BL_TOG",  "&none",                "&none",   "&bl BL_TOG", "&rgb_ug RGB_TOG",           "&bl BL_INC",   "&bl BL_DEC",       "&none",  "&none", "&bt BT_CLR"
-    ], [
-       "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",           "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",
-       "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",           "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",
-       "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",           "&trans", "&trans", "&trans",                     "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",
-       "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",           "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",
-       "&trans", "&trans", "&trans", "&trans", "&trans", "&trans",           "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans", "&trans"
     ]
   ]
 }
