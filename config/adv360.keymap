@@ -39,17 +39,17 @@
 
         default_layer {
             bindings = <
-   &none  &kp N1  &kp N2  &kp N3     &kp N4         &kp SLASH                    &mo 3                                                                                                                          &mo 3               &kp BACKSLASH       &kp LBKT   &kp RBKT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS
-   &none   &kp V   &kp W   &kp D      &kp L         &kp MINUS                    &tog 2                                                                                                                         &tog 2              &kp EQUAL           &kp U      &kp O     &kp Y                 &kp B                  &none
-   &kp ESC &kp N   &kp S   &kp T      &kp R         &kp COMMA                    &tog 0         &mo 1           &kp LEFT_WIN                                        &kp ESCAPE     &mo 1                        &tog 0              &kp PERIOD          &kp A      &kp E     &kp I                 &kp C                  &kp ENTER
-   &none   &kp P   &kp F   &kp M      &kp H         &kp SINGLE_QUOTE             &none          &none           &kp LEFT_CONTROL            &none      &none        &kp TAB        &none            &none                           &kp DOUBLE_QUOTES   &kp K      &kp J     &kp X                 &kp G                  &none
-   &none   &kp Z   &kp Q  &kp UP  &kp RIGHT                                      &kp BSPC       &kp LEFT_SHIFT  &kp LEFT_ALT                                        &kp RIGHT_WIN  &kp RIGHT_SHIFT  &kp SPACE                                           &kp LEFT   &kp DOWN  &kp UP                &kp RIGHT              &none
+   &none     &kp SINGLE_QUOTE    &kp DOUBLE_QUOTES   &kp MINUS   &kp EQUAL   &kp SLASH                    &mo 3                                                                                                                          &mo 3       &kp BACKSLASH       &kp LBKT   &kp RBKT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS
+   &none     &kp V               &kp W               &kp D       &kp L       &kp MINUS                    &tog 4                                                                                                                         &tog 2      &kp EQUAL           &kp U      &kp O     &kp Y                 &kp B                  &none
+   &kp ESC   &kp N               &kp S               &kp T       &kp R       &kp COMMA                    &tog 0         &mo 1           &kp LEFT_WIN                                        &kp ESCAPE     &mo 1                        &tog 0      &kp PERIOD          &kp A      &kp E     &kp I                 &kp C                  &kp ENTER
+   &none     &kp P               &kp F               &kp M       &kp H       &kp SINGLE_QUOTE             &none          &none           &kp LEFT_CONTROL            &none      &none        &kp TAB        &none            &none                   &kp DOUBLE_QUOTES   &kp K      &kp J     &kp X                 &kp G                  &none
+   &none     &kp Z               &kp Q               &kp UP      &kp RIGHT                                &kp BSPC       &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo 2  &kp RIGHT_SHIFT  &kp SPACE                                   &kp LEFT   &kp DOWN  &kp UP                &kp RIGHT              &none
             >;
         };
 
         layer_keypad {
             bindings = <
-&trans     &kp N1    &kp N2    &kp N3     &kp N4    &kp N5             &trans                                                                                          &trans      &trans       &trans     &trans        &trans        &trans            &trans
+&trans     &trans    &trans    &trans     &trans    &trans             &trans                                                                                          &trans      &trans       &trans     &trans        &trans        &trans            &trans
 &trans     &kp Q     &kp W     &kp E      &kp R     &kp T              &trans                                                                                          &trans      &kp Y        &kp N1     &kp N2        &kp N3        &trans            &trans
 &trans     &kp A     &kp S     &kp D      &kp F     &kp G              &trans     &trans      &trans     &trans                            &trans    &trans            &trans      &kp H        &kp N4     &kp N5        &kp N6        &kp DOT           &trans
 &trans     &kp Z     &kp X     &kp C      &kp V     &kp B                         &none       &none      &trans    &none        &none      &trans    &none     &none               &kp N        &kp N7     &kp N8        &kp N9        &kp COMMA         &trans
@@ -59,11 +59,11 @@
 
         layer_fn {
             bindings = <
-&kp F12  &kp F1    &kp F2   &kp F3   &kp F4     &kp F5 &trans                                                            &trans &kp F6 &kp F7 &kp F8    &kp F9   &kp F10  &kp F11
-&trans   &kp Q     &kp W    &kp E    &kp R      &kp T  &trans                                                            &trans &kp Y  &kp U  &kp I     &kp O    &kp P    &trans
-&trans   &kp A     &kp S    &kp D    &kp F      &kp G  &trans          &trans  &trans             &trans &trans          &trans &kp H  &kp J  &kp K     &kp L    &kp SEMI &trans
-&trans   &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none   &trans &none &none &trans &none  &none           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &trans
-&trans   &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &trans   &trans  &trans             &trans &trans &trans                 &trans &trans    &trans   &trans   &trans
+&trans  &kp F1    &kp F2   &kp F3   &kp F4     &kp F5 &trans                                                            &trans &kp F6 &kp F7 &kp F8    &kp F9   &kp F10  &trans
+&trans   &kp RG(Q)     &kp RG(W)    &kp RG(E)    &kp RG(R)      &kp RG(T)  &trans                                                            &trans &kp RG(Y)  &kp RG(U)  &kp RG(I)     &kp RG(O)    &kp RG(P)    &trans
+&trans   &kp RG(A)     &kp RG(S)    &kp RG(D)    &kp RG(F)      &kp RG(G)  &trans          &trans  &trans             &trans &trans          &trans &kp RG(H)  &kp RG(J)  &kp RG(K)     &kp RG(L)    &none        &trans
+&trans   &kp RG(Z)     &kp RG(X)    &kp RG(C)    &kp RG(V)      &kp RG(B)         &none    &none   &trans &none &none &trans &none  &none           &kp RG(N)  &kp RG(M)  &none         &none        &none        &trans
+&trans   &none         &none        &none        &none          &trans     &trans &trans           &trans &trans &trans                 &trans &trans    &trans   &trans   &trans
             >;
         };
 
@@ -74,6 +74,16 @@
  &bootloader         &none         &none         &none         &none            &none                &trans  &trans                 &none                                               &trans        &trans       &trans   &none       &none   &none   &none   &none  &bootloader
        &none         &none         &none         &none         &none            &none                 &none   &none  &rgb_ug RGB_MEFS_CMD         &none            &none  &rgb_ug RGB_MEFS_CMD         &none        &none   &none       &none   &none   &none   &none        &none
   &bt BT_CLR         &none         &none    &bl BL_INC    &bl BL_DEC  &rgb_ug RGB_TOG            &bl BL_TOG   &none                 &none    &bl BL_TOG  &rgb_ug RGB_TOG            &bl BL_INC    &bl BL_DEC        &none   &none  &bt BT_CLR
+            >;
+        };
+
+        layer_qwerty {
+            bindings = <
+&trans   &trans    &trans   &trans   &trans     &trans &trans                                                            &trans &trans &trans &trans    &trans   &trans   &trans
+&trans   &kp Q     &kp W    &kp E    &kp R      &kp T  &trans                                                            &trans &kp Y  &kp U  &kp I     &kp O    &kp P    &trans
+&trans   &kp A     &kp S    &kp D    &kp F      &kp G  &trans          &trans  &trans             &trans &trans          &trans &kp H  &kp J  &kp K     &kp L    &kp SEMI &trans
+&trans   &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none   &trans &none &none &trans &none  &none           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &trans
+&trans   &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &trans   &trans  &trans             &trans &trans &trans                 &trans &trans    &trans   &trans   &trans
             >;
         };
 
