@@ -164,7 +164,7 @@
 
         layer_fn {
             bindings = <
-&trans  &kp F1    &kp F2   &kp F3   &kp F4     &kp F5 &trans                                                            &trans &kp F6 &kp F7 &kp F8    &kp F9   &kp F10  &trans
+&trans  &kp F1    &kp F2   &kp RG(MINUS)   &kp RG(EQUAL)   &kp RG(SLASH)  &trans                                                            &trans &kp F6 &kp F7 &kp F8    &kp F9   &kp F10  &trans
 &trans   &kp RG(Q)     &kp RG(W)    &kp RG(E)    &kp RG(R)      &kp RG(T)  &trans                                                            &trans &kp RG(Y)  &kp RG(U)  &kp RG(I)     &kp RG(O)    &kp RG(P)    &trans
 &trans   &kp RG(A)     &kp RG(S)    &kp RG(D)    &kp RG(F)      &kp RG(G)  &trans          &trans  &trans             &trans &trans          &trans &kp RG(H)  &kp RG(J)  &kp RG(K)     &kp RG(L)    &none        &trans
 &trans   &kp RG(Z)     &kp RG(X)    &kp RG(C)    &kp RG(V)      &kp RG(B)         &none    &none   &trans &none &none &trans &none  &none           &kp RG(N)  &kp RG(M)  &none         &none        &none        &trans
