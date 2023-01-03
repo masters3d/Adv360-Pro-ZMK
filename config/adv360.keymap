@@ -84,7 +84,7 @@
         compatible = "zmk,behavior-mod-morph";
         label = "MORPH_QUOTE_DOUBLE";
         #binding-cells = <0>;
-        bindings = <&kp DOUBLE_QUOTE>, <&kp TILDE>;
+        bindings = <&kp DOUBLE_QUOTES>, <&kp TILDE>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
   };
