@@ -80,7 +80,13 @@
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     // &quote_double_override,
-
+    morph_quote_double: morph_quote_double {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MORPH_QUOTE_DOUBLE";
+        #binding-cells = <0>;
+        bindings = <&kp DOUBLE_QUOTE>, <&kp TILDE>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
   };
 
     keymap {
@@ -89,9 +95,9 @@
 
         default_layer {
             bindings = <
-   &kp LS(LG(S))       &kp SINGLE_QUOTE    &kp DOUBLE_QUOTES   &kp MINUS   &kp EQUAL   &kp SLASH                    &mo 8                                                                                                                          &mo 8       &kp BACKSLASH       &kp LBKT   &kp RBKT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS
+   &kp LS(LG(S))       &morph_quote_single    &morph_quote_double   &kp MINUS   &kp EQUAL   &morph_exclamation                    &mo 8                                                                                                                          &mo 8       &kp BACKSLASH       &kp LBKT   &kp RBKT  &morph_parens_left  &morph_parens_right  &kp MINUS
    &kp LC(LA(DEL))     &kp V               &kp W               &kp D       &kp L       &kp MINUS                    &to 1                                                                                                                          &tog 7      &kp EQUAL           &kp U      &kp O     &kp Y                 &kp B                  &none
-   &kp ESC             &kp N               &kp S               &kp T       &kp R       &kp COMMA                    &to 0          &mo 6           &kp LEFT_WIN                                        &kp ESCAPE     &mo 6                        &tog 0      &kp PERIOD          &kp A      &kp E     &kp I                 &kp C                  &kp ENTER
+   &kp ESC             &kp N               &kp S               &kp T       &kp R       &morph_comma                    &to 0          &mo 6           &kp LEFT_WIN                                        &kp ESCAPE     &mo 6                        &tog 0      &morph_dot          &kp A      &kp E     &kp I                 &kp C                  &kp ENTER
    &none               &kp P               &kp F               &kp M       &kp H       &kp SINGLE_QUOTE             &none          &none           &kp LEFT_CONTROL            &none      &none        &kp TAB        &none            &none                   &kp DOUBLE_QUOTES   &kp K      &kp J     &kp X                 &kp G                  &none
    &none               &kp Z               &kp Q               &kp UP      &kp RIGHT                                &kp BSPC       &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo 7  &kp RIGHT_SHIFT  &kp SPACE                                   &kp LEFT   &kp DOWN  &kp UP                &kp RIGHT              &none
             >;
