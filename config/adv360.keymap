@@ -6,17 +6,14 @@
  */
 
 
-/* THIS FILE WAS GENERATED!
- *
- * This file was generated automatically. You may or may not want to
- * edit it directly.
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
+
+#define LAYER_KEYPAD 6
+#define LAYER_CMD 7
 
 / {
   behaviors {
@@ -107,10 +104,10 @@
         default_layer {
             bindings = <
    &kp LS(LG(S))       &morph_quote_single    &morph_quote_double   &kp MINUS   &kp EQUAL   &kp SLASH               &mo 8                                                                                                                          &mo 8       &morph_exclamation       &kp LBKT   &kp RBKT  &morph_parens_left  &morph_parens_right  &kp MINUS
-   &kp LC(LA(DEL))     &kp V               &kp W               &kp D       &kp L       &mo_key 6 Q                    &to 1                                                                                                                          &tog 7      &kp Z           &kp U      &kp O     &kp Y                 &kp B                  &none
+   &kp LC(LA(DEL))     &kp V               &kp W               &kp D       &kp L       &mo_key LAYER_CMD Q                    &to 1                                                                                                                          &tog 1      &kp Z           &kp U      &kp O     &kp Y                 &kp B                  &none
    &kp ESC             &kp N               &kp S               &kp T       &kp R       &morph_comma                    &to 0          &mo 6           &kp LEFT_WIN                                        &kp ESCAPE     &mo 6                        &tog 0      &morph_dot          &kp A      &kp E     &kp I                 &kp C                  &kp ENTER
    &none               &kp P               &kp F               &kp M       &kp H       &kp SEMICOLON             &none          &none           &kp LEFT_CONTROL            &none      &none        &kp TAB        &none            &none                   &kp COLON   &kp K      &kp J     &kp X                 &kp G                  &none
-   &none               &kp HOME            &kp PAGE_DOWN     &kp PAGE_UP   &kp END                                &kp BSPC       &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo 7  &kp RIGHT_SHIFT  &kp SPACE                                   &kp LEFT   &kp DOWN  &kp UP                &kp RIGHT              &none
+   &none               &kp HOME            &kp PAGE_DOWN     &kp PAGE_UP   &kp END                                &kp BSPC       &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo LAYER_CMD  &kp RIGHT_SHIFT  &kp SPACE                                   &kp LEFT   &kp DOWN  &kp UP                &kp RIGHT              &none
             >;
         };
 
