@@ -96,10 +96,10 @@
         default_layer {
             bindings = <
    &kp LS(LG(S))       &morph_quote_single    &morph_quote_double   &kp MINUS   &kp EQUAL   &kp SLASH               &mo 8                                                                                                                          &mo 8       &morph_exclamation       &kp LBKT   &kp RBKT  &morph_parens_left  &morph_parens_right  &kp MINUS
-   &kp LC(LA(DEL))     &kp V               &kp W               &kp D       &kp L       &kp MINUS                    &to 1                                                                                                                          &tog 7      &kp EQUAL           &kp U      &kp O     &kp Y                 &kp B                  &none
+   &kp LC(LA(DEL))     &kp V               &kp W               &kp D       &kp L       &kp Q                    &to 1                                                                                                                          &tog 7      &kp Z           &kp U      &kp O     &kp Y                 &kp B                  &none
    &kp ESC             &kp N               &kp S               &kp T       &kp R       &morph_comma                    &to 0          &mo 6           &kp LEFT_WIN                                        &kp ESCAPE     &mo 6                        &tog 0      &morph_dot          &kp A      &kp E     &kp I                 &kp C                  &kp ENTER
    &none               &kp P               &kp F               &kp M       &kp H       &kp SEMICOLON             &none          &none           &kp LEFT_CONTROL            &none      &none        &kp TAB        &none            &none                   &kp COLON   &kp K      &kp J     &kp X                 &kp G                  &none
-   &none               &kp Z               &kp Q               &kp UP      &kp RIGHT                                &kp BSPC       &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo 7  &kp RIGHT_SHIFT  &kp SPACE                                   &kp LEFT   &kp DOWN  &kp UP                &kp RIGHT              &none
+   &none               &kp HOME            &kp PAGE_DOWN     &kp PAGE_UP   &kp END                                &kp BSPC       &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo 7  &kp RIGHT_SHIFT  &kp SPACE                                   &kp LEFT   &kp DOWN  &kp UP                &kp RIGHT              &none
             >;
         };
 
@@ -109,7 +109,7 @@
 &trans   &kp Q     &kp W    &kp E    &kp R      &kp T  &trans                                                            &trans &kp Y  &kp U  &kp I     &kp O    &kp P    &trans
 &trans   &kp A     &kp S    &kp D    &kp F      &kp G  &trans          &trans  &trans             &trans &trans          &trans &kp H  &kp J  &kp K     &kp L    &morph_dot    &trans
 &trans   &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none   &trans &none &none &trans &none  &none           &kp N  &kp M  &kp COMMA &kp DOT  &morph_comma  &trans
-&trans   &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &trans   &trans  &trans             &trans &trans &trans                 &trans &trans    &trans   &trans   &trans
+&trans   &trans    &trans   &trans   &trans                   &trans   &trans  &trans             &trans &trans &trans                 &trans &trans    &trans   &trans   &trans
             >;
         };
 
@@ -154,11 +154,11 @@
     };
         layer_keypad {
             bindings = <
-&trans     &kp F5    &kp F6    &kp F7     &kp F8     &kp PERCENT        &trans                                                                                          &trans      &kp CARET            &macro_brackets  &macro_braces &macro_parens  &macro_angle_brackets   &trans
-&trans     &kp F9    &kp F10   &kp F11    &kp F12    &kp DOLLAR         &trans                                                                                          &trans      &kp AMPERSAND        &kp N1     &kp N2        &kp N3        &trans            &trans
-&trans     &kp F13   &kp F14   &kp F15    &kp F16    &kp POUND          &trans                 &trans     &trans                            &trans    &trans            &trans      &kp STAR             &kp N4     &kp N5        &kp N6        &kp DOT           &trans
-&trans     &kp F17   &kp F18   &kp F19    &kp F20    &kp AT_SIGN                   &none       &none      &trans    &none        &none      &trans    &none     &none               &kp PIPE             &kp N7     &kp N8        &kp N9        &kp COMMA         &trans
-&trans     &kp F21   &kp F22   &kp F23    &kp F24                                  &trans      &trans     &trans                            &trans    &trans    &trans                                   &trans     &kp N0        &trans        &trans            &trans
+&trans     &trans    &trans   &trans   &trans        &kp PERCENT        &trans                                                                                          &trans      &kp CARET            &macro_brackets  &macro_braces &macro_parens  &macro_angle_brackets   &trans
+&trans     &kp F13   &kp F14   &kp F15    &kp F16    &kp DOLLAR         &trans                                                                                          &trans      &kp AMPERSAND        &kp N1     &kp N2        &kp N3        &trans            &trans
+&trans     &kp F17   &kp F18   &kp F19    &kp F20    &kp POUND          &trans                 &trans     &trans                            &trans    &trans            &trans      &kp STAR             &kp N4     &kp N5        &kp N6        &kp DOT           &trans
+&trans     &kp F21   &kp F22   &kp F23    &kp F24    &kp AT_SIGN                   &none       &none      &trans    &none        &none      &trans    &none     &none               &kp PIPE             &kp N7     &kp N8        &kp N9        &kp COMMA         &trans
+&trans     &trans    &trans   &trans   &trans                                      &trans      &trans     &trans                            &trans    &trans    &trans                                   &trans     &kp N0        &trans        &trans            &trans
             >;
         };
 
