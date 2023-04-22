@@ -101,7 +101,7 @@
         compatible = "zmk,keymap";
 
 
-        default_layer {
+        layer0_default {
             bindings = <
    &kp LS(LG(S))       &morph_quote_single    &morph_quote_double   &kp MINUS   &kp EQUAL   &kp SLASH               &mo 8                                                                                                                          &mo 8       &morph_exclamation       &kp LBKT   &kp RBKT  &morph_parens_left  &morph_parens_right  &kp MINUS
    &kp LC(LA(DEL))     &kp V               &kp W               &kp D       &kp L       &mo_key LAYER_CMD Q                    &to 1                                                                                                                          &tog 1      &kp Z           &kp U      &kp O     &kp Y                 &kp B                  &none
@@ -111,7 +111,7 @@
             >;
         };
 
-        layer_qwerty {
+        layer1_qwerty {
             bindings = <
 &trans   &trans    &trans   &trans   &trans     &trans &trans                                                            &trans &trans &trans &trans    &trans   &trans   &trans
 &trans   &kp Q     &kp W    &kp E    &kp R      &kp T  &trans                                                            &trans &kp Y  &kp U  &kp I     &kp O    &kp P    &trans
@@ -121,7 +121,7 @@
             >;
         };
 
-    layer_padding1 {
+    layer2_padding {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
@@ -131,7 +131,7 @@
       >;
     };
 
-    layer_padding2 {
+    layer3_padding {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
@@ -141,7 +141,7 @@
       >;
     };
 
-     layer_padding3 {
+     layer4_padding {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
@@ -151,7 +151,7 @@
       >;
     };
 
-     layer_padding4 {
+     layer5_padding {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
@@ -160,7 +160,7 @@
         &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
     };
-        layer_keypad {
+        layer6_keypad {
             bindings = <
 &trans     &trans    &trans   &trans   &trans        &kp PERCENT        &trans                                                                                          &trans      &kp CARET            &macro_brackets  &macro_braces &macro_parens  &macro_angle_brackets   &trans
 &trans     &kp F13   &kp F14   &kp F15    &kp F16    &kp DOLLAR         &trans                                                                                          &trans      &kp AMPERSAND        &kp N1     &kp N2        &kp N3        &trans            &trans
@@ -170,7 +170,7 @@
             >;
         };
 
-        layer_fn {
+        layer7_fn {
             bindings = <
 &trans   &kp F1  &kp F2  &kp RG(MINUS)   &kp RG(EQUAL)   &kp RG(SLASH)  &trans                                                            &trans &kp RG(BACKSLASH) &kp RG(LEFT_BRACKET) &kp RG(RIGHT_BRACKET)  &kp F3 &kp F4  &trans
 &trans   &kp RG(Q)     &kp RG(W)    &kp RG(E)    &kp RG(R)      &kp RG(T)  &trans                                                            &trans &kp RG(Y)  &kp RG(U)  &kp RG(I)     &kp RG(O)    &kp RG(P)    &trans
@@ -180,7 +180,7 @@
             >;
         };
 
-        layer_mod {
+        layer8_mod {
             bindings = <
  &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                &trans  &trans          &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
        &none         &none         &none         &none         &none            &none                &trans  &trans                 &none         &none            &none                 &none         &none        &none
@@ -189,10 +189,6 @@
   &bt BT_CLR         &none         &none    &bl BL_INC    &bl BL_DEC  &rgb_ug RGB_TOG            &bl BL_TOG   &none                 &none    &bl BL_TOG  &rgb_ug RGB_TOG            &bl BL_INC    &bl BL_DEC        &none   &none  &bt BT_CLR
             >;
         };
-
-
-
-
 
     };
 };
