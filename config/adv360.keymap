@@ -107,7 +107,7 @@
    &kp ESCAPE          &kp SEMICOLON           &kp P                   &kp L           &kp C       &kp W                                                  &to 1                                                                                                                                        &to 1       &kp Z                      &kp U      &kp O     &kp Y                  &kp COLON               &kp DEL
    &kp BSPC            &kp R                   &kp N                   &kp T           &kp S       &kp F                                                   &to 0                   &mo 6           &kp LEFT_WIN                                        &kp ESCAPE     &mo 6                            &to 0       &morph_dot                 &kp A      &kp E     &kp I                  &kp H                   &kp ENTER
    &kp LC(BSPC)        &kp V                   &kp B                   &kp M           &kp D       &kp G                         &none        &none           &kp LEFT_CONTROL            &none      &none        &kp TAB        &none            &none                                                            &morph_comma               &kp K      &kp J     &kp X                  &kp Q                   &kp TAB
-   &mo 8               &kp HOME               &kp PAGE_DOWN         &kp PAGE_UP   &kp END                                       &kp SPACE     &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo LAYER_CMD  &kp RIGHT_SHIFT  &kp SPACE                                                                                    &kp LEFT   &kp DOWN  &kp UP                 &kp RIGHT             &mo 8
+   &mo 8               &kp HOME               &kp PAGE_DOWN            &mo 5   &mo 6                                        &kp SPACE     &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo LAYER_CMD  &kp RIGHT_SHIFT  &kp SPACE                                                                                    &kp LEFT   &kp DOWN  &kp UP                 &kp RIGHT             &mo 8
             >;
         };
 
@@ -153,10 +153,10 @@
 
      layer5_padding {
       bindings = <
-        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &kp PERCENT  &kp CARET     &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &kp DOLLAR   &kp AMPERSAND &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &kp POUND    &kp STAR      &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &kp AT_SIGN  &kp PIPE      &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
     };
