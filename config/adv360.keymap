@@ -153,10 +153,10 @@
 
      layer5_padding {
       bindings = <
-        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &kp PERCENT  &kp CARET     &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &kp DOLLAR   &kp AMPERSAND &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &kp POUND    &kp STAR      &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &kp AT_SIGN  &kp PIPE      &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &kp PIPE     &kp STAR      &kp AMPERSAND &kp CARET     &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &kp AT_SIGN  &kp POUND     &kp DOLLAR    &kp PERCENT   &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
     };
