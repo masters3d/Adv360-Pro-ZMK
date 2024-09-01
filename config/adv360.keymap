@@ -4,68 +4,183 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+#define LAYER_KEYPAD 6
+#define LAYER_CMD 7
+
 / {
-    behaviors {
-      #include "macros.dtsi"
-      #include "version.dtsi"
-      #ifndef VERSION_MACRO
-      macro_ver: macro_ver {
-        compatible = "zmk,behavior-macro";
-        label = "macro_version";
+  behaviors {
+    #include "macros.dtsi"
+
+
+    mo_key: behavior_mo_key {
+        compatible = "zmk,behavior-hold-tap";
+        label = "mo_key";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick_tap_ms = <175>;
+        flavor = "tap-preferred";
+        bindings = <&mo>, <&kp>;
+    };
+
+    hm: homerow_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick_tap_ms = <175>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
+    // &dot_override,
+    morph_dot: morph_dot {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MORPH_DOT";
         #binding-cells = <0>;
-        bindings = <&kp RET>;
-      };
-      #endif
-
-      hm: homerow_mods {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
-          #binding-cells = <2>;
-          tapping-term-ms = <200>;
-          quick_tap_ms = <175>;
-          flavor = "tap-preferred";
-          bindings = <&kp>, <&kp>;
-      };
+        bindings = <&kp PERIOD>, <&kp COLON>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-
-  keymap {
-    compatible = "zmk,keymap";
-
-    default_layer {
-      bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
-      >;
+    // &comma_override,
+    morph_comma: morph_comma {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MORPH_COMMA";
+        #binding-cells = <0>;
+        bindings = <&kp COMMA>, <&kp SEMICOLON>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    keypad {
-      bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
-      >;
+    // &parens_left_override,
+    morph_parens_left: morph_parens_left {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MORPH_PARENS_LEFT";
+        #binding-cells = <0>;
+        bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    fn {
-      bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
-      >;
+    // &parens_right_override,
+    morph_parens_right: morph_parens_right {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MORPH_PARENS_RIGHT";
+        #binding-cells = <0>;
+        bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    mod {
-      bindings = <
-        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                     &trans                 &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none        &bootloader                                                               &bootloader            &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none        &none                   &none &none &bt BT_CLR &none                      &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &macro_ver   &none                                      &none &none                                                        &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
-      >;
+    // &exclamation_override,
+    morph_exclamation: morph_exclamation {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MORPH_EXCLAMATION";
+        #binding-cells = <0>;
+        bindings = <&kp BACKSLASH>, <&kp EXCLAMATION>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    // &quote_single_override,
+    morph_quote_single: morph_quote_single {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MORPH_QUOTE_SINGLE";
+        #binding-cells = <0>;
+        bindings = <&kp SINGLE_QUOTE>, <&kp GRAVE>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    // &quote_double_override,
+    morph_quote_double: morph_quote_double {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MORPH_QUOTE_DOUBLE";
+        #binding-cells = <0>;
+        bindings = <&kp DOUBLE_QUOTES>, <&kp TILDE>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
   };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+
+        layer0_default {
+            bindings = <
+   &kp LS(LG(S))       &morph_quote_single    &morph_quote_double   &kp MINUS     &kp EQUAL   &kp SLASH              &kp LC(LA(DEL))                                                                                                                             &kp LC(LA(DEL))       &morph_exclamation       &kp LBKT   &kp RBKT  &morph_parens_left    &morph_parens_right   &kp MINUS
+   &kp ESCAPE          &kp SEMICOLON           &kp P                   &kp L           &kp C       &kp W                                                  &to 1                                                                                                                                        &to 1       &kp Z                      &kp U      &kp O     &kp Y                  &kp COLON               &kp DEL
+   &kp BSPC            &kp R                   &kp N                   &kp T           &kp S       &kp F                                                   &to 0                   &mo 6           &kp LEFT_WIN                                        &kp ESCAPE     &mo 6                            &to 0       &morph_dot                 &kp A      &kp E     &kp I                  &kp H                   &kp ENTER
+   &kp LC(BSPC)        &kp V                   &kp B                   &kp M           &kp D       &kp G                         &none        &none           &kp LEFT_CONTROL            &none      &none        &kp TAB        &none            &none                                                            &morph_comma               &kp K      &kp J     &kp X                  &kp Q                   &kp TAB
+   &mo 8               &kp HOME               &kp PAGE_DOWN            &mo 5   &mo 6                                        &kp SPACE     &kp LEFT_SHIFT  &kp LEFT_ALT                                        &mo LAYER_CMD  &kp RIGHT_SHIFT  &kp SPACE                                                                                    &kp LEFT   &kp DOWN  &kp UP                 &kp RIGHT             &mo 8
+            >;
+        };
+
+        layer1_qwerty {
+            bindings = <
+&trans   &trans    &trans   &trans   &trans     &trans &trans                                                            &trans &trans &trans &trans    &trans   &trans   &trans
+&trans   &kp Q     &kp W    &kp E    &kp R      &kp T  &trans                                                            &trans &kp Y  &kp U  &kp I     &kp O    &kp P    &trans
+&trans   &kp A     &kp S    &kp D    &kp F      &kp G  &trans          &trans  &trans             &trans &trans          &trans &kp H  &kp J  &kp K     &kp L    &morph_dot    &trans
+&trans   &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none   &trans &none &none &trans &none  &none           &kp N  &kp M  &kp COMMA &kp DOT  &morph_comma  &trans
+&trans   &trans    &trans   &trans   &trans                   &trans   &trans  &trans             &trans &trans &trans                 &trans &trans    &trans   &trans   &trans
+            >;
+        };
+
+    layer2_padding {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
+      >;
+    };
+
+    layer3_padding {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
+      >;
+    };
+
+     layer4_padding {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
+      >;
+    };
+
+     layer5_padding {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &kp PIPE     &kp STAR      &kp AMPERSAND &kp CARET     &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &kp AT_SIGN  &kp POUND     &kp DOLLAR    &kp PERCENT   &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
+      >;
+    };
+        layer6_keypad {
+            bindings = <
+&trans     &trans    &trans   &trans   &trans        &kp PERCENT        &trans                                                                                          &trans      &kp CARET            &macro_brackets  &macro_braces &macro_parens  &macro_angle_brackets   &trans
+&trans     &kp F13   &kp F14   &kp F15    &kp F16    &kp DOLLAR         &trans                                                                                          &trans      &kp AMPERSAND        &kp N1     &kp N2        &kp N3        &trans            &trans
+&trans     &kp F17   &kp F18   &kp F19    &kp F20    &kp POUND          &trans                 &trans     &trans                            &trans    &trans            &trans      &kp STAR             &kp N4     &kp N5        &kp N6        &kp DOT           &trans
+&trans     &kp F21   &kp F22   &kp F23    &kp F24    &kp AT_SIGN                   &none       &none      &trans    &none        &none      &trans    &none     &none               &kp PIPE             &kp N7     &kp N8        &kp N9        &kp COMMA         &trans
+&trans     &trans    &trans   &trans   &trans                                      &trans      &trans     &trans                            &trans    &trans    &trans                                   &trans     &kp N0        &trans        &trans            &trans
+            >;
+        };
+
+        layer7_fn {
+            bindings = <
+&trans   &kp F1  &kp F2  &kp RG(MINUS)   &kp RG(EQUAL)   &kp RG(SLASH)  &trans                                                            &trans &kp RG(BACKSLASH) &kp RG(LEFT_BRACKET) &kp RG(RIGHT_BRACKET)  &kp F3 &kp F4  &trans
+&trans   &kp RG(Q)     &kp RG(W)    &kp RG(E)    &kp RG(R)      &kp RG(T)  &trans                                                            &trans &kp RG(Y)  &kp RG(U)  &kp RG(I)     &kp RG(O)    &kp RG(P)    &trans
+&trans   &kp RG(A)     &kp RG(S)    &kp RG(D)    &kp RG(F)      &kp RG(G)  &trans          &trans  &trans             &trans &trans          &trans &kp RG(H)  &kp RG(J)  &kp RG(K)     &kp RG(L)    &none        &trans
+&trans   &kp RG(Z)     &kp RG(X)    &kp RG(C)    &kp RG(V)      &kp RG(B)         &none    &none   &trans &none &none &trans &none  &none           &kp RG(N)  &kp RG(M)  &none         &none        &none        &trans
+&trans   &none         &none        &none        &none          &trans     &trans &trans           &trans &trans &trans                 &trans &trans    &trans   &trans   &trans
+            >;
+        };
+
+        layer8_mod {
+            bindings = <
+ &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                &trans  &trans          &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
+       &none         &none         &none         &none         &none            &none                &trans  &trans                 &none         &none            &none                 &none         &none        &none
+ &bootloader         &none         &none         &none         &none            &none                &trans  &trans                 &none                                               &trans        &trans       &trans   &none       &none   &none   &none   &none  &bootloader
+       &none         &none         &none         &none         &none            &none                 &none   &none  &rgb_ug RGB_MEFS_CMD         &none            &none  &rgb_ug RGB_MEFS_CMD         &none        &none   &none       &none   &none   &none   &none        &none
+  &bt BT_CLR         &none         &none    &bl BL_INC    &bl BL_DEC  &rgb_ug RGB_TOG            &bl BL_TOG   &none                 &none    &bl BL_TOG  &rgb_ug RGB_TOG            &bl BL_INC    &bl BL_DEC        &none   &none  &bt BT_CLR
+            >;
+        };
+
+    };
 };
