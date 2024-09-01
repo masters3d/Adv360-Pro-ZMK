@@ -28,6 +28,12 @@
     #binding-cells = <0>;
     bindings = <&kp LBKT>, <&kp RBKT>, <&kp LEFT>;
   };
+  macro_angle_brackets: macro_angle_brackets{
+    compatible = "zmk,behavior-macro";
+    label = "macro_angle_brackets";
+    #binding-cells = <0>;
+    bindings = <&kp LT>, <&kp GT>, <&kp LEFT>;
+  };
   macro_kinesis: macro_kinesis {
     compatible = "zmk,behavior-macro";
     label = "macro_kinesis";
