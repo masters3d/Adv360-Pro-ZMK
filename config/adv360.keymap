@@ -92,8 +92,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer0_default {
-            bindings = <
+    layer0_default {
+        bindings = <
         &kp LS(LG(S))   &morph_quote_single  &morph_quote_double  &kp MINUS  &kp EQUAL  &kp SLASH   &kp LC(LA(DEL))                                                                                              &kp LC(LA(DEL))  &morph_exclamation   &kp LBKT   &kp RBKT  &morph_parens_left  &morph_parens_right  &kp MINUS
         &kp ESCAPE      &kp SEMICOLON        &kp P                &kp L      &kp C      &kp W       &to 1                                                                                                        &to 1            &kp Z                &kp U      &kp O     &kp Y               &kp COLON            &kp DEL
         &kp BSPC        &kp R                &kp N                &kp T      &kp S      &kp F       &to 0                       &mo LAYER_KEYPAD  &kp LEFT_WIN       &kp ESCAPE     &mo LAYER_KEYPAD             &to 0            &morph_dot           &kp A      &kp E     &kp I               &kp H                &kp ENTER
@@ -102,8 +102,8 @@
             >;
         };
 
-        layer1_qwerty {
-            bindings = <
+    layer1_qwerty {
+        bindings = <
         &trans   &trans    &trans   &trans   &trans     &trans &trans                                                            &trans &trans &trans &trans    &trans   &trans       &trans
         &trans   &kp Q     &kp W    &kp E    &kp R      &kp T  &trans                                                            &trans &kp Y  &kp U  &kp I     &kp O    &kp P        &trans
         &trans   &kp A     &kp S    &kp D    &kp F      &kp G  &trans          &trans  &trans             &trans &trans          &trans &kp H  &kp J  &kp K     &kp L    &morph_dot   &trans
@@ -163,11 +163,11 @@
 
         layer7_fn {
             bindings = <
-&trans   &kp F1  &kp F2  &kp RG(MINUS)   &kp RG(EQUAL)   &kp RG(SLASH)  &trans                                                            &trans &kp RG(BACKSLASH) &kp RG(LEFT_BRACKET) &kp RG(RIGHT_BRACKET)  &kp F3 &kp F4  &trans
-&trans   &kp RG(Q)     &kp RG(W)    &kp RG(E)    &kp RG(R)      &kp RG(T)  &trans                                                            &trans &kp RG(Y)  &kp RG(U)  &kp RG(I)     &kp RG(O)    &kp RG(P)    &trans
-&trans   &kp RG(A)     &kp RG(S)    &kp RG(D)    &kp RG(F)      &kp RG(G)  &trans          &trans  &trans             &trans &trans          &trans &kp RG(H)  &kp RG(J)  &kp RG(K)     &kp RG(L)    &none        &trans
-&trans   &kp RG(Z)     &kp RG(X)    &kp RG(C)    &kp RG(V)      &kp RG(B)                          &trans             &trans                        &kp RG(N)  &kp RG(M)  &none         &none        &none        &trans
-&trans   &none         &none        &none        &none          &trans     &trans &trans           &trans &trans &trans                 &trans &trans    &trans   &trans   &trans
+        &trans   &kp F1        &kp F2       &kp RG(MINUS)  &kp RG(EQUAL)   &kp RG(SLASH)  &trans                                                            &trans &kp RG(BACKSLASH) &kp RG(LEFT_BRACKET) &kp RG(RIGHT_BRACKET)  &kp F3      &kp F4       &trans
+        &trans   &kp RG(Q)     &kp RG(W)    &kp RG(E)      &kp RG(R)       &kp RG(T)      &trans                                                            &trans &kp RG(Y)         &kp RG(U)            &kp RG(I)              &kp RG(O)   &kp RG(P)    &trans
+        &trans   &kp RG(A)     &kp RG(S)    &kp RG(D)      &kp RG(F)       &kp RG(G)      &trans          &trans  &trans             &trans &trans          &trans &kp RG(H)         &kp RG(J)            &kp RG(K)              &kp RG(L)   &none        &trans
+        &trans   &kp RG(Z)     &kp RG(X)    &kp RG(C)      &kp RG(V)       &kp RG(B)                              &trans             &trans                        &kp RG(N)         &kp RG(M)            &none                  &none       &none        &trans
+        &trans   &none         &none        &none          &none                                    &trans &trans &trans             &trans &trans &trans                            &trans               &trans                 &trans      &trans       &trans
             >;
         };
 
