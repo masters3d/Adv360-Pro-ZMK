@@ -94,11 +94,11 @@
 
     layer0_default {
         bindings = <
-        &kp LS(LG(S))   &morph_quote_single  &morph_quote_double  &kp MINUS  &kp EQUAL  &kp SLASH   &kp LC(LA(DEL))                                                                                              &kp LC(LA(DEL))  &morph_exclamation   &kp LBKT   &kp RBKT  &morph_parens_left  &morph_parens_right  &kp MINUS
-        &kp ESCAPE      &kp SEMICOLON        &kp P                &kp L      &kp C      &kp W       &to 1                                                                                                        &to 1            &kp Z                &kp U      &kp O     &kp Y               &kp COLON            &kp DEL
-        &kp BSPC        &kp R                &kp N                &kp T      &kp S      &kp F       &to 0                       &mo LAYER_KEYPAD  &kp LEFT_WIN       &kp ESCAPE     &mo LAYER_KEYPAD             &to 0            &morph_dot           &kp A      &kp E     &kp I               &kp H                &kp ENTER
-        &kp LC(BSPC)    &kp V                &kp B                &kp M      &kp D      &kp G                                                     &kp LEFT_CONTROL   &kp TAB                                                      &morph_comma         &kp K      &kp J     &kp X               &kp Q                &kp TAB
-        &mo LAYER_MOD   &kp HOME             &kp PAGE_DOWN        &mo 5      &mo 6                                   &kp SPACE  &kp LEFT_SHIFT    &kp LEFT_ALT       &mo LAYER_CMD  &kp RIGHT_SHIFT  &kp SPACE                                         &kp LEFT   &kp DOWN  &kp UP              &kp RIGHT            &mo LAYER_MOD
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5  &kp N6                                                     &kp N0 &kp N1 &kp N2 &kp N3 &kp N4  &kp N5  &kp N6
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5  &kp N6                                                     &kp N0 &kp N1 &kp N2 &kp N3 &kp N4  &kp N5  &kp N6
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5  &kp N6       &kp N7 &kp N8             &kp N7 &kp N8       &kp N0 &kp N1 &kp N2 &kp N3 &kp N4  &kp N5  &kp N6
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                      &kp N9             &kp N9                     &kp N1 &kp N2 &kp N3 &kp N4  &kp N5  &kp N6
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp N4               &kp N5 &kp N6 &kp N7             &kp N5 &kp N6 &kp N7              &kp N2 &kp N3 &kp N4  &kp N5  &kp N6
             >;
         };
 
@@ -114,11 +114,11 @@
 
     layer2_padding {
       bindings = <
-        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans       &trans &trans             &trans &trans       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans             &trans                     &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
+        &kp LS(LG(S))   &morph_quote_single  &morph_quote_double  &kp MINUS  &kp EQUAL  &kp SLASH   &kp LC(LA(DEL))                                                                                              &kp LC(LA(DEL))  &morph_exclamation   &kp LBKT   &kp RBKT  &morph_parens_left  &morph_parens_right  &kp MINUS
+        &kp ESCAPE      &kp SEMICOLON        &kp P                &kp L      &kp C      &kp W       &to 1                                                                                                        &to 1            &kp Z                &kp U      &kp O     &kp Y               &kp COLON            &kp DEL
+        &kp BSPC        &kp R                &kp N                &kp T      &kp S      &kp F       &to 0                       &mo LAYER_KEYPAD  &kp LEFT_WIN       &kp ESCAPE     &mo LAYER_KEYPAD             &to 0            &morph_dot           &kp A      &kp E     &kp I               &kp H                &kp ENTER
+        &kp LC(BSPC)    &kp V                &kp B                &kp M      &kp D      &kp G                                                     &kp LEFT_CONTROL   &kp TAB                                                      &morph_comma         &kp K      &kp J     &kp X               &kp Q                &kp TAB
+        &mo LAYER_MOD   &kp HOME             &kp PAGE_DOWN        &mo 5      &mo 6                                   &kp SPACE  &kp LEFT_SHIFT    &kp LEFT_ALT       &mo LAYER_CMD  &kp RIGHT_SHIFT  &kp SPACE                                         &kp LEFT   &kp DOWN  &kp UP              &kp RIGHT            &mo LAYER_MOD
       >;
     };
 
