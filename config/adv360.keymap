@@ -93,12 +93,33 @@
         compatible = "zmk,keymap";
 
     layer0_default {
+        // -----------------------------------------------------------------------------------------
+        // Thumb Cluster Layout (unified across all keyboards):
+        //
+        //     Left Thumb Cluster              Right Thumb Cluster
+        //     (Left hand)                     (Right hand)
+        //     ┌───┬───┬───┐                   ┌───┬───┬───┐
+        //     │L6 │L5 │L4 │                   │R4 │R5 │R6 │
+        //     ├───┼───┼───┤                   ├───┼───┼───┤
+        //     │L1 │L2 │L3 │                   │R3 │R2 │R1 │
+        //     └───┴───┴───┘                   └───┴───┴───┘
+        //    (thumb)  (far)                  (far)  (thumb)
+        //
+        // Position Mapping:
+        //   L1=SPACE  L2=LSHIFT  L3=LALT  L4=LCTRL  L5=LWIN  L6=mo_KEYPAD
+        //   R1=SPACE  R2=RSHIFT  R3=mo_CMD  R4=LCTRL  R5=ESC  R6=mo_KEYPAD
+        //
+        // adv360 Matrix Positions:
+        //   Row 3 (homerow): ... [to 0] [L6:KEYPAD] [L5:WIN] ... [R5:ESC] [R6:KEYPAD] [to 0] ...
+        //   Row 4 (below):   ...        [L4:CTRL]            ... [R4:CTRL]            ...
+        //   Row 5 (bottom):  ...        [L1:SPC] [L2:LSHFT] [L3:LALT] | [R3:CMD] [R2:RSHFT] [R1:SPC] ...
+        // -----------------------------------------------------------------------------------------
         bindings = <
         &kp LS(LG(S))   &morph_quote_single  &morph_quote_double  &kp MINUS  &kp EQUAL  &kp SLASH   &kp LC(LA(DEL))                                                                                              &kp LC(LA(DEL))  &morph_exclamation    &kp LBKT   &kp RBKT  &morph_parens_left  &morph_parens_right  &kp MINUS
-        &kp HOME        &kp Q                &kp W                &kp E      &kp R      &kp T       &to 1                                                                                                        &to 1            &kp Y                 &kp U      &kp I     &kp O               &kp P                &kp DEL
+        &kp ESC         &kp Q                &kp W                &kp E      &kp R      &kp T       &to 1                                                                                                        &to 1            &kp Y                 &kp U      &kp I     &kp O               &kp P                &kp DEL
         &kp BSPC        &kp A                &kp S                &kp D      &kp F      &kp G       &to 0                       &mo LAYER_KEYPAD  &kp LEFT_WIN       &kp ESCAPE     &mo LAYER_KEYPAD             &to 0            &kp H                 &kp J      &kp K     &kp L               &morph_dot                &kp ENTER
-        &kp LC(BSPC)    &kp Z                &kp X                &kp C      &kp V      &kp B                                                     &kp LEFT_CONTROL   &kp TAB                                                      &kp N                 &kp M      &kp COMMA &kp DOT             &morph_comma         &kp TAB
-        &mo LAYER_MOD   &kp HOME             &kp PAGE_DOWN        &mo 5      &mo 6                                   &kp SPACE  &kp LEFT_SHIFT    &kp LEFT_ALT       &mo LAYER_CMD  &kp RIGHT_SHIFT  &kp SPACE                                          &kp LEFT   &kp DOWN  &kp UP              &kp RIGHT            &mo LAYER_MOD
+        &kp LC(BSPC)    &kp Z                &kp X                &kp C      &kp V      &kp B                                                     &kp LEFT_CONTROL   &kp LEFT_CONTROL                                             &kp N                 &kp M      &kp COMMA &kp DOT             &morph_comma         &kp TAB
+        &mo LAYER_MOD   &kp HOME             &kp PAGE_DOWN        &kp PAGE_UP    &kp END                             &kp SPACE  &kp LEFT_SHIFT    &kp LEFT_ALT       &mo LAYER_CMD  &kp RIGHT_SHIFT  &kp SPACE                                          &kp LEFT   &kp DOWN  &kp UP              &kp RIGHT            &mo LAYER_MOD
             >;
         };
 
@@ -163,11 +184,11 @@
 
         layer7_fn {
             bindings = <
-        &trans   &kp F1        &kp F2       &kp RG(MINUS)  &kp RG(EQUAL)   &kp RG(SLASH)  &trans                                                            &trans &kp RG(BACKSLASH) &kp RG(LEFT_BRACKET) &kp RG(RIGHT_BRACKET)  &kp F3      &kp F4       &trans
-        &trans   &kp RG(Q)     &kp RG(W)    &kp RG(E)      &kp RG(R)       &kp RG(T)      &trans                                                            &trans &kp RG(Y)         &kp RG(U)            &kp RG(I)              &kp RG(O)   &kp RG(P)    &trans
-        &trans   &kp RG(A)     &kp RG(S)    &kp RG(D)      &kp RG(F)       &kp RG(G)      &trans          &trans  &trans             &trans &trans          &trans &kp RG(H)         &kp RG(J)            &kp RG(K)              &kp RG(L)   &none        &trans
-        &trans   &kp RG(Z)     &kp RG(X)    &kp RG(C)      &kp RG(V)       &kp RG(B)                              &trans             &trans                        &kp RG(N)         &kp RG(M)            &none                  &none       &none        &trans
-        &trans   &none         &none        &none          &none                                    &trans &trans &trans             &trans &trans &trans                            &trans               &trans                 &trans      &trans       &trans
+        &trans   &kp F1        &kp F2       &kp RC(MINUS)  &kp RC(EQUAL)   &kp RC(SLASH)  &trans                                                            &trans &kp RC(BACKSLASH) &kp RC(LEFT_BRACKET) &kp RC(RIGHT_BRACKET)  &kp F3      &kp F4       &trans
+        &trans   &kp RC(Q)     &kp RC(W)    &kp RC(E)      &kp RC(R)       &kp RC(T)      &trans                                                            &trans &kp RC(Y)         &kp RC(U)            &kp RC(I)              &kp RC(O)   &kp RC(P)    &trans
+        &trans   &kp RC(A)     &kp RC(S)    &kp RC(D)      &kp RC(F)       &kp RC(G)      &trans          &trans  &trans             &trans &trans          &trans &kp RC(H)         &kp RC(J)            &kp RC(K)              &kp RC(L)   &none        &trans
+        &trans   &kp RC(Z)     &kp RC(X)    &kp RC(C)      &kp RC(V)       &kp RC(B)                              &trans             &trans                        &kp RC(N)         &kp RC(M)            &none                  &none       &none        &trans
+        &trans   &none         &none        &none          &none                                    &trans &trans &trans             &trans &trans &trans                            &kp RC(LEFT)         &kp RC(DOWN)           &kp RC(UP)  &kp RC(RIGHT) &trans
             >;
         };
 
